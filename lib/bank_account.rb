@@ -7,7 +7,7 @@ class BankAccount
     @transactions = []
   end
 
-  def debit(amount)
+  def credit(amount)
     @balance += amount
   end
 
