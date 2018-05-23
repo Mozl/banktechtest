@@ -10,10 +10,11 @@ describe Statement do
   end
 
   it 'prints a transaction' do
+    date = Time.new.strftime('%d-%m-%Y')
     account = BankAccount.new
     statement = Statement.new(account)
     account.credit(200)
     statement.print_all
-    expect { print('23-05-2018 || || 200 || 200') }.to output.to_stdout
+    expect { print("#{date} || || 200 || 200") }.to output.to_stdout
   end
 end
