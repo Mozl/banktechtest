@@ -3,7 +3,7 @@ require_relative 'transaction'
 
 class BankAccount
   attr_accessor :balance, :transactions
-  def initialize(balance = 0)
+  def initialize(balance = 0.0)
     @balance = balance
     @transactions = []
   end

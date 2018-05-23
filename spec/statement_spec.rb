@@ -13,8 +13,8 @@ describe Statement do
     date = Time.new.strftime('%d-%m-%Y')
     account = BankAccount.new
     statement = Statement.new(account)
-    account.credit(200)
+    account.credit(2000.99)
     statement.print_all
-    expect { print("#{date} || || 200 || 200") }.to output.to_stdout
+    expect { print("#{date} || || 2000.99 || 2000.99") }.to output.to_stdout
   end
 end
