@@ -12,7 +12,7 @@ class Statement
   def print_all
     puts HEADER
     @transactions.each do |transaction|
-      puts "#{transaction.date}  || #{transaction.debit} || #{transaction.credit} || #{transaction.balance}"
+      puts "#{transaction.date}  || #{transaction.debit} || #{transaction.credit} || #{(transaction.balance).round(2)}"
     end
   end
 end

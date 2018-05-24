@@ -14,7 +14,7 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2018-05-24T13:39:33+01:00">2018-05-24T13:39:33+01:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2018-05-24T17:03:48+01:00">2018-05-24T17:03:48+01:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -83,7 +83,7 @@
       <tr>
         <td class="strong"><a href="#37d1614cb15148b3072966e0146fd1f3a3e38eb1" class="src_link" title="spec/bank_account_spec.rb">spec/bank_account_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>30</td>
+        <td>23</td>
         <td>14</td>
         <td>14</td>
         <td>0</td>
@@ -372,7 +372,7 @@
         <li class="covered" data-hits="1" data-linenumber="15">
           <span class="hits">1</span>
           
-          <code class="ruby">      puts &quot;#{transaction.date}  || #{transaction.debit} || #{transaction.credit} || #{transaction.balance}&quot;</code>
+          <code class="ruby">      puts &quot;#{transaction.date}  || #{transaction.debit} || #{transaction.credit} || #{(transaction.balance).round(2)}&quot;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="16">
@@ -521,151 +521,109 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="6">
-          
-          
-          <code class="ruby">  # before do</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="7">
-          
-          
-          <code class="ruby">  #   allow(fakeTransactionClass).to receive(:new).and_return(date, nil, 5.95, 5.95)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="8">
-          
-          
-          <code class="ruby">  # end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="9">
-          
-          
-          <code class="ruby">  # subject { described_class.new(0, fakeTransactionClass)}</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="10">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="11">
+        <li class="covered" data-hits="1" data-linenumber="6">
           <span class="hits">1</span>
           
           <code class="ruby">  it &#39;initializes with 0 balance&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="12">
+        <li class="covered" data-hits="1" data-linenumber="7">
           <span class="hits">1</span>
           
           <code class="ruby">    expect(fakeTransactionClass.balance).to eq(0)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="13">
+        <li class="never" data-hits="" data-linenumber="8">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="14">
+        <li class="never" data-hits="" data-linenumber="9">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="15">
+        <li class="covered" data-hits="1" data-linenumber="10">
           <span class="hits">1</span>
           
           <code class="ruby">  it &#39;credits the account with 5.95&#39; do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="16">
-          
-          
-          <code class="ruby">    # subject.credit(5.95)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="17">
-          
-          
-          <code class="ruby">    # expect(subject.balance).to eq(5.95)</code>
-        </li>
-      
-        <li class="covered" data-hits="4" data-linenumber="18">
+        <li class="covered" data-hits="4" data-linenumber="11">
           <span class="hits">4</span>
           
           <code class="ruby">    expect{subject.credit(5.95)}.to change{subject.balance}.from(0).to(5.95)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="19">
+        <li class="never" data-hits="" data-linenumber="12">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="20">
+        <li class="never" data-hits="" data-linenumber="13">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="21">
+        <li class="covered" data-hits="1" data-linenumber="14">
           <span class="hits">1</span>
           
           <code class="ruby">  it &#39;debits the account with 10&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="22">
+        <li class="covered" data-hits="4" data-linenumber="15">
           <span class="hits">4</span>
           
           <code class="ruby">    expect{subject.debit(5.95)}.to change{subject.balance}.from(0).to(-5.95)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="23">
+        <li class="never" data-hits="" data-linenumber="16">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="24">
+        <li class="never" data-hits="" data-linenumber="17">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="25">
+        <li class="covered" data-hits="1" data-linenumber="18">
           <span class="hits">1</span>
           
           <code class="ruby">  it &#39;checks transaction array working&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="26">
+        <li class="covered" data-hits="1" data-linenumber="19">
           <span class="hits">1</span>
           
           <code class="ruby">    subject.credit(500)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="27">
+        <li class="covered" data-hits="1" data-linenumber="20">
           <span class="hits">1</span>
           
           <code class="ruby">    subject.debit(100)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="28">
+        <li class="covered" data-hits="1" data-linenumber="21">
           <span class="hits">1</span>
           
           <code class="ruby">    expect(subject.transactions).to have_attributes(length: 2)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="29">
+        <li class="never" data-hits="" data-linenumber="22">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="30">
+        <li class="never" data-hits="" data-linenumber="23">
           
           
           <code class="ruby">end</code>
