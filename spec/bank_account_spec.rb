@@ -1,26 +1,18 @@
 require './lib/bank_account'
 describe BankAccount do
   date = Time.new.strftime('%d-%m-%Y')
-  let (:fakeTransactionClass) { double('fakeTransactionClass') }
-
-  before do
-    allow(fakeTransactionClass).to receive(:new).and_return(date, nil, 5.95, 5.95)
-  end
-  subject { described_class.new(0, fakeTransactionClass)}
+  let (:fakeTransactionClass) { double('fakeTransactionClass', date: date, debit: nil, credit: 5.95, balance: 0) }
 
   it 'initializes with 0 balance' do
-    expect(subject.balance).to eq(0)
+    expect(fakeTransactionClass.balance).to eq(0)
   end
 
-  it 'credits the account with 5' do
-    subject.credit(5.95)
-    expect(subject.balance).to eq(5.95)
+  it 'credits the account with 5.95' do
+    expect{subject.credit(5.95)}.to change{subject.balance}.from(0).to(5.95)
   end
 
   it 'debits the account with 10' do
-    subject.credit(100)
-    subject.debit(10)
-    expect(subject.balance).to eq(90)
+    expect{subject.debit(5.95)}.to change{subject.balance}.from(0).to(-5.95)
   end
 
   it 'checks transaction array working' do
